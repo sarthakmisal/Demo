@@ -1,12 +1,14 @@
 package com.samarth.demo;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 /**
  * EmployeeServiceImp
  */
+@Service
 public class EmployeeServiceImp implements EmployeeService {
     private List<Employee> list =new ArrayList<>();
     @Override
@@ -20,6 +22,7 @@ public class EmployeeServiceImp implements EmployeeService {
     }
     @Override
     public boolean deleteEmployee(Long id) {
-        return list.remove(id);
+        this.list.remove(id);
+        return true;
     }
 }
